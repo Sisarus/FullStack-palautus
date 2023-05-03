@@ -1,4 +1,12 @@
 osan 0 tehtävien vastaukset
 
 
-tehtävä 0.4
+0.4: Uusi muistiinpano
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
