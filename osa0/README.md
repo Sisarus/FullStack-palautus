@@ -11,5 +11,5 @@ sequenceDiagram
     server-->>browser: HTML document
     
     
-    browser->: POST /exampleapp/new_note
+    browser->server: POST /exampleapp/new_note
 ```
