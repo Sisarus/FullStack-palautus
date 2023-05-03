@@ -12,8 +12,4 @@ sequenceDiagram
     
     
     browser->: POST /exampleapp/new_note
-
-    Note right of John: Rational thoughts <br/>prevail!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
 ```
