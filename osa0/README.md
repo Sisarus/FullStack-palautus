@@ -5,14 +5,15 @@ osan 0 tehtävien vastaukset
 
 ```mermaid
 sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
+    participant browser
+    participant server
+    browser->>server: GET /exampleapp/data.json
+    server-->>browser HTML document
+    
+    
+    browser->: POST /exampleapp/new_note
+
     Note right of John: Rational thoughts <br/>prevail!
     John-->>Alice: Great!
     John->>Bob: How about you?
-    Bob-->>John: Jolly good!
 ```
