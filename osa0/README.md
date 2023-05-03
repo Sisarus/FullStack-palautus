@@ -8,7 +8,7 @@ sequenceDiagram
     participant browser
     participant server
     browser->>server: GET /exampleapp/data.json
-    server-->>browser HTML document
+    server-->>browser: HTML document
     
     
     browser->: POST /exampleapp/new_note
