@@ -5,7 +5,8 @@ osan 0 tehtävien vastaukset
 
 ```mermaid
 graph TD;
-    Käyttäjä-->Save;
+    Käyttäjä-->Kirjoittaa viestin;
+    Kirjoittaa viestin-->Painaa tallenna;
     A-->C;
     B-->D;
     C-->D;
