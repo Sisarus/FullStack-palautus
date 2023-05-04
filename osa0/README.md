@@ -70,6 +70,8 @@ sequenceDiagram
     server-->>browser: json, Response {"message":"note created"}
     deactivate server
     
-    Note right of browser: Data tallentui ja sivuston #notes uudelleen luodaan.
+    Note left of server: Data saved.
+    Note right of browser: redraw notes.
+ 
     
 ```
