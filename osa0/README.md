@@ -67,10 +67,10 @@ sequenceDiagram
     participant server
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
     activate server
+    Note left of server: Data saved.
     server-->>browser: json, Response {"message":"note created"}
     deactivate server
     
-    Note left of server: Data saved.
     Note right of browser: redraw notes.
  
     
