@@ -1,7 +1,7 @@
-osan 0 tehtävien vastaukset
+# osan 0 tehtävien vastaukset
 
 
-0.4: Uusi muistiinpano
+## 0.4: Uusi muistiinpano
 
 ```mermaid
 sequenceDiagram
@@ -32,3 +32,4 @@ sequenceDiagram
     server-->>browser: HTML document
     deactivate server
 ```
+## 0.5: Single Page App
