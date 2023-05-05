@@ -22,6 +22,7 @@ const Total = ({parts}) => {
   )
 }
 
+
 const Part = ({name, exercises}) => {
   return (
     <div>
