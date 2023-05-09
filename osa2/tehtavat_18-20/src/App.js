@@ -1,5 +1,5 @@
 import { useState } from "react";
-import coutriesService from "./servisces/coutries";
+import coutriesService from "./services/coutries";
 import ShowData from './components/ShowData.jsx'
 
 const App =()=> {
@@ -7,7 +7,7 @@ const App =()=> {
   const [lookCountry, setLookCountry] = useState('')
   const [message, setMessage] = useState(null)
 
-  const handleCountryChange =(e)=>{
+  const handleCountryChange = (e) => {
     setLookCountry(e.target.value)
 
      console.log(e.target.value.length,  " " , e.target.value !== 0)

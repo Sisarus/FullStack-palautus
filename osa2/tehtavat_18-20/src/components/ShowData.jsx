@@ -1,3 +1,5 @@
+import Weather from "./Weather"
+
 const ShowData =({countriesData, handleShowSelectedCountry, message}) => {
     if(message !== null && countriesData.length === 0){
         return (
@@ -28,6 +30,7 @@ const ShowData =({countriesData, handleShowSelectedCountry, message}) => {
                 }
                 </ul>
                 <img style={style} src={countriesData[0].flags.png} alt={countriesData[0].flags.alt}/>
+                <Weather capital={countriesData[0].capital}/>
             </div>
         )
     }
