@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Filter from './componets/Filter'
 import PersonForm from './componets/PersonForm'
 import Persons from './componets/Persons'
+import Notification from './componets/Notification'
 
 import personService from './services/persons'
 
@@ -10,6 +11,8 @@ const App = () => {
   const [newName, setNewName] = useState('New name')
   const [newNumber, setNewNumber] = useState('New number')
   const [filterData, setFilterData] = useState('')
+  const [personMessage, setPersonMessage] = useState(null)
+  const [errorMessage, setErrorMessage] = useState(null)
 
   const personsToShow = filterData.length === 0 ? persons : persons.filter(person => person.name.toLocaleLowerCase().includes(filterData.toLocaleLowerCase()))
 
@@ -59,6 +62,12 @@ const App = () => {
               setPersons(showPersons.concat(returnedPerson))
               setNewName('')
               setNewNumber('')
+              setPersonMessage(
+                `Updated ${returnedPerson.name} phonenumber`
+              )
+              setTimeout(() => {
+                setPersonMessage(null)
+              }, 5000)
             })
       }
     } else {
@@ -68,6 +77,13 @@ const App = () => {
           setPersons(persons.concat(returnedPerson))
           setNewName('')
           setNewNumber('')
+
+          setPersonMessage(
+            `Added ${returnedPerson.name}`
+          )
+          setTimeout(() => {
+            setPersonMessage(null)
+          }, 5000)
         })
     }
   }
@@ -86,6 +102,23 @@ const App = () => {
         .then(response => {
           const showPersons = persons.filter(person => person.id !== deletePerson.id)
           setPersons(showPersons)
+
+          setPersonMessage(
+            `Deleted ${deletePerson.name}`
+          )
+          setTimeout(() => {
+            setPersonMessage(null)
+          }, 5000)
+        })
+        .catch(error => {
+          setErrorMessage(
+            `Information of '${deletePerson.name}' has already been removed from server`
+          )
+          const showPersons = persons.filter(person => person.id !== deletePerson.id)
+          setPersons(showPersons)
+          setTimeout(() => {
+            setErrorMessage(null)
+          }, 5000)
         })
     }
 
@@ -94,6 +127,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={personMessage} errorMessage={errorMessage} />
       <Filter value={filterData} handleFilterData={handleFilterData}/>
       <h3>Add a new</h3>
       <PersonForm 

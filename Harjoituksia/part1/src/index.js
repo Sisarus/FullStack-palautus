@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import Kokoelma from './Kokoelma'
+import AppNotes from './AppNotes'
+import './index.css'
 
 // import axios from 'axios'
 
@@ -17,4 +18,4 @@ import Kokoelma from './Kokoelma'
 //   console.log(notes)
 // })
 
-ReactDOM.createRoot(document.getElementById('root')).render(<Kokoelma/>)
+ReactDOM.createRoot(document.getElementById('root')).render(<AppNotes/>)
