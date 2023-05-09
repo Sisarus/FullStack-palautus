@@ -5,7 +5,6 @@ import ShowData from './components/ShowData.jsx'
 const App =()=> {
   const [countries, setCountries] = useState([])
   const [lookCountry, setLookCountry] = useState('')
-  const [showData, setShowData] = useState(false)
   const [message, setMessage] = useState(null)
 
   const handleCountryChange =(e)=>{
